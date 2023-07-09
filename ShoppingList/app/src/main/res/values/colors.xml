@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="textColorDefault">#000000</color>
+    <color name="textColorChecked">#cccccc</color>
+    <color name="colorListItemBackground">#dee7b1</color>
+    <color name="colorPrimary">#c4d473</color>
+    <color name="colorPrimaryDark">#ccda87</color>
+    <color name="colorSecondaryLight">#f5debc</color>
+    <color name="colorAccent">#f4c8a6</color>
+    <color name="colorCritical">#eca77f</color>
+</resources>

@@ -1,0 +1,158 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.MainActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ccda87"
+        android:id="@+id/head">
+
+        <TextView
+            android:id="@+id/text_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text=" Product"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@android:color/black"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/text_quantity"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_toStartOf="@+id/text_price"
+            android:layout_toEndOf="@+id/text_description"
+            android:gravity="end"
+            android:textSize="20dp"
+            android:text="Amount"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/black" />
+
+
+        <TextView
+            android:id="@+id/text_price"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:text="Price"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/black" />
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/shoppingListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/head"
+        android:scrollbars="vertical" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@id/shoppingListView"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom|end"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@drawable/ic_add_black_24dp" />
+
+    <RelativeLayout
+        android:id="@+id/layout_add_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/background_light"
+        android:elevation="16dp"
+        android:padding="2dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/text_warn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorAccent"
+            android:visibility="gone" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/new_item_descriptionParent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_warn"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="4dp">
+
+            <EditText
+                android:id="@+id/new_item_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_new_item"
+                android:inputType="textCapSentences"
+                android:singleLine="true" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <ImageButton
+            android:id="@+id/button_add_new_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/new_item_descriptionParent"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="4dp"
+            android:contentDescription="@string/done"
+            android:paddingBottom="6dp"
+            android:paddingEnd="20dp"
+            android:paddingStart="20dp"
+            android:paddingTop="6dp"
+            android:background="@drawable/button_add_selector"
+            android:src="@drawable/ic_done_white_24dp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/new_item_descriptionParent"
+            android:layout_alignParentStart="true"
+            android:layout_toStartOf="@id/button_add_new_item">
+
+            <EditText
+                android:id="@+id/new_item_quantity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_quantity"
+                android:inputType="number"
+                android:singleLine="true" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/new_item_descriptionParent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_warn"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="60dp">
+
+            <EditText
+                android:id="@+id/new_item_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_price"
+                android:inputType="number"
+                android:singleLine="true" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
